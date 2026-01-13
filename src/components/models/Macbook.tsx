@@ -21,7 +21,7 @@ interface GLTFResult {
   };
 }
 
-export function Model(props: React.ComponentProps<"group">) {
+export default function MacbookModel(props: React.ComponentProps<"group">) {
   const { nodes, materials } = useGLTF('/models/macbook-transformed.glb') as GLTFResult
   const texture = useTexture('/screen.png');
   return (
