@@ -44,7 +44,7 @@ const performanceImgPositions = [
     },
     {
         id: "p2",
-        right: -7,
+        right: -8,
         bottom: 60,
     },
     {
