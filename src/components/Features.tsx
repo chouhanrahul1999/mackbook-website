@@ -13,12 +13,16 @@ import { Group } from "three";
 
 const ModelScroll = () => {
   const groupRef = useRef<Group>(null);
-  const isMobile = useMediaQuery({ query: "(max-width: 1024px" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const { setTexture } = useMacbookStore();
 
   useEffect(() => {
     featureSequence.forEach((feature) => {
       const v = document.createElement("video");
+
+      v.addEventListener('error', (e) => {
+        console.warn(`Failed to preload video: ${feature.videoPath}`, e);
+      });
 
       Object.assign(v, {
         src: feature.videoPath,
@@ -72,7 +76,7 @@ const ModelScroll = () => {
 
       .call(() => setTexture("/videos/feature-5.mp4"))
       .to(".box5", { opacity: 1, y: 0 });
-  }, []);
+  }, [setTexture]);
 
   return (
     <group ref={groupRef}>
@@ -83,7 +87,7 @@ const ModelScroll = () => {
           </Html>
         }
       >
-        <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} />
+        <MacbookModel scale={isMobile ? 0.04 : 0.07} position={[0, -1, 0]} />
       </Suspense>
     </group>
   );
