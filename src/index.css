@@ -316,12 +316,12 @@ body {
           @apply h-full bg-[url(/highlight-bg.png)] bg-no-repeat bg-cover p-10 2xl:pt-32 lg:pt-20 rounded-3xl;
 
           p {
-            @apply font-semibold text-4xl max-w-2xs;
+            @apply font-semibold md:text-4xl text-3xl max-w-2xs;
           }
         }
 
         p {
-          @apply font-semibold text-4xl max-w-2xs;
+          @apply font-semibold md:text-4xl text-xl max-w-2xs;
         }
 
         div:last-of-type {
@@ -337,7 +337,7 @@ body {
         @apply flex flex-col justify-between gap-5 opacity-0 -translate-y-5;
 
         p {
-          @apply font-semibold text-4xl max-w-2xs;
+          @apply font-semibold md:text-4xl text-xl max-w-2xs;
         }
         .apple-gradient {
           @apply p-10 rounded-3xl flex items-center gap-7 relative;
@@ -385,7 +385,7 @@ body {
           @apply h-full bg-[#1D1D1F] p-10 2xl:pt-32 lg:pt-20 rounded-3xl;
 
           p {
-            @apply font-semibold text-4xl max-w-sm;
+            @apply font-semibold md:text-4xl text-2xl max-w-sm;
 
             .green-gradient {
               background: linear-gradient(90deg, #35a98a 0%, #6dd400 100%);
