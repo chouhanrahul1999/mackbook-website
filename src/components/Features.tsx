@@ -15,13 +15,19 @@ const ModelScroll = () => {
   const groupRef = useRef<Group>(null);
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const { setTexture } = useMacbookStore();
+  const videoCache = useRef<Map<string, HTMLVideoElement>>(new Map());
 
   useEffect(() => {
     featureSequence.forEach((feature) => {
       const v = document.createElement("video");
 
-      v.addEventListener('error', (e) => {
-        console.warn(`Failed to preload video: ${feature.videoPath}`, e);
+      v.addEventListener("error", (e) => {
+        const sanitizedPath = feature.videoPath.replace(/[\r\n]/g, "");
+        console.warn(`Failed to preload video: ${sanitizedPath}`, e);
+      });
+
+      v.addEventListener("canplaythrough", () => {
+        videoCache.current.set(feature.videoPath, v);
       });
 
       Object.assign(v, {
@@ -31,7 +37,13 @@ const ModelScroll = () => {
         preload: "auto",
         crossOrigin: "anonymous",
       });
+      
+      v.load();
     });
+
+    return () => {
+      videoCache.current.clear();
+    };
   }, []);
 
   useGSAP(() => {
@@ -62,19 +74,34 @@ const ModelScroll = () => {
     }
 
     timeline
-      .call(() => setTexture("/videos/feature-1.mp4"))
+      .call(() => {
+        const video = videoCache.current.get("/videos/feature-1.mp4");
+        if (video) setTexture("/videos/feature-1.mp4");
+      })
       .to(".box1", { opacity: 1, y: 0, delay: 1 })
 
-      .call(() => setTexture("/videos/feature-2.mp4"))
+      .call(() => {
+        const video = videoCache.current.get("/videos/feature-2.mp4");
+        if (video) setTexture("/videos/feature-2.mp4");
+      })
       .to(".box2", { opacity: 1, y: 0 })
 
-      .call(() => setTexture("/videos/feature-3.mp4"))
+      .call(() => {
+        const video = videoCache.current.get("/videos/feature-3.mp4");
+        if (video) setTexture("/videos/feature-3.mp4");
+      })
       .to(".box3", { opacity: 1, y: 0 })
 
-      .call(() => setTexture("/videos/feature-4.mp4"))
+      .call(() => {
+        const video = videoCache.current.get("/videos/feature-4.mp4");
+        if (video) setTexture("/videos/feature-4.mp4");
+      })
       .to(".box4", { opacity: 1, y: 0 })
 
-      .call(() => setTexture("/videos/feature-5.mp4"))
+      .call(() => {
+        const video = videoCache.current.get("/videos/feature-5.mp4");
+        if (video) setTexture("/videos/feature-5.mp4");
+      })
       .to(".box5", { opacity: 1, y: 0 });
   }, [setTexture]);
 
