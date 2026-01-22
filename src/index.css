@@ -144,14 +144,14 @@ body {
     @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40;
 
     h2 {
-      @apply text-white font-semibold text-3xl lg:text-6xl;
+      @apply text-white font-semibold text-3xl lg:text-5xl 2xl:text-6xl;
     }
 
     .controls {
       @apply absolute z-50 bottom-40 lg:bottom-40 2xl:bottom-52 left-1/2 -translate-x-1/2;
 
       .info {
-        @apply text-xs text-white bg-black/20 px-2 py-1 rounded-lg;
+        @apply text-xs text-white bg-black/20 px-2 py-0 rounded-lg;
       }
 
       .color-control {

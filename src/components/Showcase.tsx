@@ -61,7 +61,7 @@ const Showcase = () => {
               </p>
 
               <p className="text-primary">
-                Learn more about Apple Intelligence {" "} {">"}
+                Learn more about Apple Intelligence {" "} {" "} {">"}
               </p>
             </div>
           </div>
