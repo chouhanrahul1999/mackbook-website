@@ -39,7 +39,7 @@ const Showcase = () => {
             <h2>Rocket Chip</h2>
 
             <div className="space-y-5 mt-7 pe-10">
-              <p className="text-md font-regular md:font-medium">
+              <p className="text-lg font-regular md:font-medium">
                 Introducing{" "}
                 <span className="text-white">
                   M4, the next generation of Apple silicon
@@ -47,20 +47,20 @@ const Showcase = () => {
                 . M4 powers
               </p>
 
-              <p className="text-md font-regular md:font-medium">
+              <p className="text-lg font-regular md:font-medium">
                 It drives Apple Intelligence on iPad Pro, so you can write,
                 create, and accomplish more with ease. All in a design that’s
                 unbelievably thin, light, and powerful.
               </p>
 
-              <p className="text-md font-regular md:font-medium">
+              <p className="text-lg font-regular md:font-medium">
                 A brand-new display engine delivers breathtaking precision,
                 color accuracy, and brightness. And a next-gen GPU with
                 hardware-accelerated ray tracing brings console-level graphics
                 to your fingertips.
               </p>
 
-              <p className="text-primary text-md font-regular md:font-medium">
+              <p className="text-primary text-lg font-regular md:font-medium">
                 Learn more about Apple Intelligence {" "} {" "} {">"}
               </p>
             </div>
