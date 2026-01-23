@@ -270,7 +270,7 @@ body {
       @apply mx-auto max-w-2xl mt-20;
 
       p {
-        @apply lg:h3-semibold leading-normal tracking-wide base-semibold text-center translate-y-10 opacity-0 px-6 lg:px-2 lg:pt-2;
+        @apply lg:h3-semibold leading-relaxed tracking-wide base-semibold text-center translate-y-10 opacity-0 px-6 lg:px-2 lg:pt-2;
       }
     }
   }
@@ -290,7 +290,7 @@ body {
       @apply max-w-xs absolute;
 
       p {
-        @apply lg:h3-semibold base-semibold;
+        @apply lg:h3-semibold tracking-normal base-semibold;
       }
     }
   }

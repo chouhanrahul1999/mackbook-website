@@ -60,7 +60,7 @@ const Showcase = () => {
                 to your fingertips.
               </p>
 
-              <p className="text-primary text-lg font-regular md:font-medium">
+              <p className="text-primary text-base font-regular md:font-medium">
                 Learn more about Apple Intelligence {" "} {" "} {">"}
               </p>
             </div>
