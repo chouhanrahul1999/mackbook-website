@@ -22,8 +22,8 @@ const ModelScroll = () => {
       const v = document.createElement("video");
 
       v.addEventListener("error", (e) => {
-        const sanitizedPath = feature.videoPath.replace(/[\r\n]/g, "");
-        console.warn(`Failed to preload video: ${sanitizedPath}`, e);
+        const sanitizedPath = feature.videoPath.replace(/[\r\n\t]/g, "").replace(/[<>"'&]/g, "");
+        console.warn("Failed to preload video:", sanitizedPath, e);
       });
 
       v.addEventListener("canplaythrough", () => {
@@ -73,36 +73,14 @@ const ModelScroll = () => {
       });
     }
 
-    timeline
-      .call(() => {
-        const video = videoCache.current.get("/videos/feature-1.mp4");
-        if (video) setTexture("/videos/feature-1.mp4");
-      })
-      .to(".box1", { opacity: 1, y: 0, delay: 1 })
-
-      .call(() => {
-        const video = videoCache.current.get("/videos/feature-2.mp4");
-        if (video) setTexture("/videos/feature-2.mp4");
-      })
-      .to(".box2", { opacity: 1, y: 0 })
-
-      .call(() => {
-        const video = videoCache.current.get("/videos/feature-3.mp4");
-        if (video) setTexture("/videos/feature-3.mp4");
-      })
-      .to(".box3", { opacity: 1, y: 0 })
-
-      .call(() => {
-        const video = videoCache.current.get("/videos/feature-4.mp4");
-        if (video) setTexture("/videos/feature-4.mp4");
-      })
-      .to(".box4", { opacity: 1, y: 0 })
-
-      .call(() => {
-        const video = videoCache.current.get("/videos/feature-5.mp4");
-        if (video) setTexture("/videos/feature-5.mp4");
-      })
-      .to(".box5", { opacity: 1, y: 0 });
+    featureSequence.forEach((feature, index) => {
+      timeline
+        .call(() => {
+          const video = videoCache.current.get(feature.videoPath);
+          if (video) setTexture(feature.videoPath);
+        })
+        .to(`.box${index + 1}`, { opacity: 1, y: 0, delay: index === 0 ? 1 : 0 });
+    });
   }, [setTexture]);
 
   return (

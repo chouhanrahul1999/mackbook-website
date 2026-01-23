@@ -113,13 +113,13 @@ body {
   }
 
   #hero {
-    @apply h-fit lg:h-[80vh] col-center mt-40 lg:mt-24 2xl:mt-[7vh];
+    @apply h-fit lg:h-[80vh] col-center mt-44 lg:mt-24 2xl:mt-[7vh];
 
     div {
       @apply relative z-10 col-center lg:translate-y-20;
 
       h1 {
-        @apply font-semibold lg:text-3xl 2xl:text-5xl text-white;
+        @apply font-semibold text-xl lg:text-3xl 2xl:text-5xl text-white;
       }
 
       img {
@@ -128,11 +128,11 @@ body {
     }
 
     video {
-      @apply mx-auto md:mt-0 mt-2 lg:translate-y-5 2xl:translate-y-0;
+      @apply mx-auto md:mt-0 mt-2 translate-y-6  lg:translate-y-5 2xl:translate-y-0;
     }
 
     button {
-      @apply relative z-10 bg-primary text-white py-1.5 md:py-2 px-6 mt-16 lg:mt-2 mb-5 rounded-full font-semibold md:text-lg text-base cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+      @apply relative z-10 bg-primary text-white py-1.5 md:py-2 px-6 mt-28 lg:mt-2 mb-5 rounded-full font-semibold md:text-lg text-base cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
     }
 
     p {
@@ -141,7 +141,7 @@ body {
   }
 
   #product-viewer {
-    @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40;
+    @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 md:mt-40 mt-32;
 
     h2 {
       @apply text-white font-semibold text-3xl lg:text-5xl 2xl:text-6xl;
@@ -218,7 +218,7 @@ body {
       }
 
       h3 {
-        @apply font-semibold text-xl lg:text-5xl text-white;
+        @apply font-semibold text-3xl lg:text-5xl text-white;
       }
     }
   }
@@ -270,7 +270,7 @@ body {
       @apply mx-auto max-w-2xl mt-20;
 
       p {
-        @apply lg:h3-semibold  base-semibold text-center translate-y-10 opacity-0 px-6 lg:px-2 lg:pt-2;
+        @apply lg:h3-semibold leading-normal tracking-wide base-semibold text-center translate-y-10 opacity-0 px-6 lg:px-2 lg:pt-2;
       }
     }
   }
@@ -296,7 +296,7 @@ body {
   }
 
   #highlights {
-    @apply container mx-auto lg:py-40 max-lg:px-5;
+    @apply container mx-auto lg:pt-40 lg:pb-36 max-lg:px-5;
 
     h2 {
       @apply text-white font-semibold text-3xl lg:text-7xl text-center max-w-3xl mx-auto;
@@ -307,7 +307,7 @@ body {
     }
 
     .masonry {
-      @apply grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20 text-[#F5F5F7];
+      @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mt-20 text-[#F5F5F7];
 
       .left-column {
         @apply flex flex-col justify-between gap-5 opacity-0 -translate-y-5;
@@ -321,14 +321,14 @@ body {
         }
 
         p {
-          @apply font-semibold md:text-4xl text-xl max-w-2xs;
+          @apply font-semibold md:text-4xl text-xl  max-w-2xs;
         }
 
         div:last-of-type {
-          @apply bg-[#1D1D1F] p-10 rounded-3xl flex items-center gap-7;
+          @apply bg-[#1D1D1F] p-10 rounded-3xl flex items-center md:gap-7 gap-6 ;
 
           p {
-            @apply font-semibold lg:text-2xl 2xl:text-3xl;
+            @apply font-semibold text-lg lg:text-2xl 2xl:text-3xl;
           }
         }
       }
@@ -337,7 +337,7 @@ body {
         @apply flex flex-col justify-between gap-5 opacity-0 -translate-y-5;
 
         p {
-          @apply font-semibold md:text-4xl text-xl max-w-2xs;
+          @apply font-semibold md:text-4xl text-lg max-w-2xs;
         }
         .apple-gradient {
           @apply p-10 rounded-3xl flex items-center gap-7 relative;
@@ -400,7 +400,7 @@ body {
   }
 
   footer {
-    @apply container mx-auto py-7 max-lg:px-5;
+    @apply container mx-auto py-7 mt-12 md:mt-0 max-lg:px-5;
 
     .info {
       @apply flex-between;
